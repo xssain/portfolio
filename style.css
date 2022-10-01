@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
 body{
-    background-color: grey;
+    background-color: rgb(179, 179, 179);
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
 }
@@ -10,33 +10,63 @@ body{
 }
 h1{
     text-align: center;
+    animation-name:replaceColor ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 .img-content{
     width: 100%;
     display: flex;
     overflow-x:scroll;
+    box-shadow: 10px 10px 10px  rgb(0, 0, 0);
+}
+.circle{
+    width: 100px;
+
+    animation-name: setCircle;
+    animation-duration: 10s;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+}
+@keyframes setCircle {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(365deg);
+    }
 }
 .img-line{
     border: 20px solid #fff;
+}
+.carousel-control-prev{
+    color: black;
 }
 
 img{
     height: 500px;
 }
 .link{
-    color: blue;
+    color: rgb(0, 0, 0);
     font-weight: 500;
     margin-top: 15px;
     margin-bottom: 20px;
 }
-.content-portfolio{
-    width: 600px;
-    margin: 0 auto;
-    margin-top: 200px;
+.modal-body{
     display: flex;
     flex-direction: column;
 }
+.content-portfolio{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 h2{
+    margin-top: 10px;
     text-align: center;
 }
 .portfolio-txt{
@@ -44,6 +74,7 @@ h2{
     text-align: center;
 }
 .content-code{
+
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
@@ -69,3 +100,18 @@ h2{
     grid-column: 1/3;
     grid-row: 3/5;
 }
+@keyframes replaceColor {
+    0%{
+        color: black;
+    }
+    50%{
+        color: rgb(21, 21, 238);
+        text-shadow: 15px 15px 25px rgb(11, 3, 253);
+    }
+    100%{
+        color: black;
+
+    }
+}
+
+
